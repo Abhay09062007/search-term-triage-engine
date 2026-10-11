@@ -1,8 +1,16 @@
 # DevSprint Search Term Triage Engine
 
-A local Streamlit MVP for explainable Google Ads search-term triage. It processes 25,000+ rows in memory, assigns `PROMOTE`, `BLOCK`, `IGNORE`, or `REVIEW`, shows confidence and a plain-language reason, groups normalized duplicate queries, supports session-only reviewer corrections, and exports CSV worklists.
+A decision-support prototype for reviewing Google Ads search terms. It provides explainable **PROMOTE**, **BLOCK**, **IGNORE**, or **REVIEW** recommendations, confidence levels, plain-language reasons, duplicate-query grouping, human corrections, and CSV exports.
 
-## Run
+## Live browser demo
+
+[Open the Vercel demo](https://signal-search-triage-vercel.vercel.app/)
+
+The browser edition processes CSV files locally in your browser. Uploaded data and review corrections stay in the current browser session and are not saved to a server. No installation is required to use the live demo.
+
+## Streamlit edition
+
+Run the Python app locally:
 
 ```powershell
 py -m venv .venv
@@ -25,3 +33,11 @@ Rules are conservative starting points, not universal account benchmarks. Reason
 ## Export
 
 Download a complete audit CSV or separate worklists. The promote list suggests exact-match keywords; the negative list formats exact negatives and assigns ad-group scope when available, otherwise campaign scope. Review targeting, match types, and policy before importing into Google Ads.
+
+## Editions and files
+
+- **Browser / Vercel:** `vercel-app/index.html`, `styles.css`, `app.js`, and `engine.js`.
+- **Streamlit:** `app.py`, `triage.py`, and `requirements.txt`.
+- **Browser tests:** run `node vercel-app/test-engine.cjs` with Node.js installed.
+
+This tool provides recommendations for human review. Check proposed keyword and negative-keyword changes before applying them in Google Ads.

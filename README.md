@@ -36,8 +36,7 @@ Download a complete audit CSV or separate worklists. The promote list suggests e
 
 ## Editions and files
 
-- **Browser / Vercel:** `vercel-app/index.html`, `styles.css`, `app.js`, and `engine.js`.
-- **Streamlit:** `app.py`, `triage.py`, and `requirements.txt`.
-- **Browser tests:** run `node vercel-app/test-engine.cjs` with Node.js installed.
+- **Browser / Vercel:** [Open the live demo](https://signal-search-triage-vercel.vercel.app/). The browser edition source and tests are in the [hackathon team submission](https://github.com/hackathon-2026-org/coding-challenge-2026/tree/main/submissions/team-48-TARGARYENS).
+- **Streamlit:** this repository contains `app.py`, `triage.py`, and `requirements.txt` for running the local Python app.
 
 This tool provides recommendations for human review. Check proposed keyword and negative-keyword changes before applying them in Google Ads.
